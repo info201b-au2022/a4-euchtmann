@@ -24,6 +24,8 @@ test_query2 <- function(num=6) {
 #USE DPLYR
 
 #call function get_data to view data
+load <- get_data(num_records = -1)
+View(load)
 
 # Explain how they relate to patterns of inequality
 #value 1 function
