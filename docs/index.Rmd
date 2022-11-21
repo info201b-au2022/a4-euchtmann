@@ -1,6 +1,6 @@
 ---
 title: "Your A4 Report Title (TODO: Revise title)"
-author: "Your Name"
+author: "Ella Uchtmann"
 date: '2022-11-01'
 output: html_document
 ---
@@ -13,33 +13,85 @@ source("../source/analysis.R")
 ## Abstract 
 [TODO: Include a short abstract (about 50 words)]
 
-# Test (TODO: Remove before submission!!)
-```{r echo=FALSE}
-q1_string <- test_query1()
-num <- 5
-```
-As you know, this is a markdown report. The [R Markdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) is **useful!**
-
-* Here's a test of a dynamic variable. Say **"`r q1_string`!!!** 
-* Here's another test. A vector
-of numbers: `r test_query2(num)`.
-
-Recall that _{r echo=TRUE}_ can be used to display the code, 
-which is very useful when developing and debugging a report. Here's an example: 
-
-```{r echo=TRUE}
-num <- 5
-sum <- sum(test_query2(num))
-print(sum)
-```
-
 ## Introduction 
-[TODO]
+Incarceration in the United States is a huge burden on the shoulders
+of racial minorities upheld by the those in power. There are many issues surrounding 
+the prison system in the United States. Such as, the disproportionate amount
+of black people, specifically black men, incarcerated. In this report, data from 
+the Vera Institute of Justice's Incarceration Trends Data Set, will be examined and 
+analyzed to further explore inequalities within the United
+States prison system. Direct stakeholders that should be considered when researching
+this data set are policy makers and government officials. Racism and injustice in
+the prison system are upheld and reinforced by policies and laws within the U.S.. 
+Change can only truly happen in the hands of well informed people in power through 
+the critical analysis and research of this data. Indirect stakeholder that should 
+be considered with extra care are people of color, specifically black people. The
+decisions made by direct stakeholders based on this data has nearly no daily effect
+on those in power. It will drastically impact the lives of thousands of P.O.C. 
+people in their everyday lives. 
+
+This report specifically summarizes key values within the data, such as the racial
+groups with the largest and smallest populations within the prison system historically
+and currently. There are also graphs showing the growth of the prison population
+by state and the entirety of the U.S. from 1970 to 2018. The final two charts represent 
+inequalities within the U.S. prison system through analysis of the data.  
 
 ## Data Summary 
-[TODO]
 
-[TODO ... other sections ... See Canvas for details]
+```{r}
 
-_All the very best with your work!_
+```
+Through data wrangling I thought it would be insightful to examine the differences
+between cumulative data across all years and counties with the most recent year of 
+data available. I started with calculating the race with the highest prison population
+count across all data. The calculation turned out to be **`r high_prison_count`**. This
+means that the racial group with the highest prison population across all data is
+Black people. I then decided to see if this trend hold true to the most recent year. 
+I calculated the race with the current highest prison population and the result was
+**'r current_high_prison_count`**. This shows that Black people continue to hold the 
+highest prison population in the U.S.. I then thought it would be useful to understand 
+the racial group with the lowest prison counts. I calculated the race the the lowest 
+prison population across the whole data set and the result is **`r low_prison_count`**. 
+Just as I did with the highest counts, I decided to calculate the race with the current 
+lowest prison count to see if this trend still exists. The result is **`r current_low_prison_count`**. 
+This means that AAPI peoples hold the lowest prison population historically and currently
+as analyzed through this data set. It is important to take into consideration populations
+when looking at these results. AAPI and Black peoples make up a relatively small 
+individual chunk of the U.S. population. This explains why the AAPI results were
+so low. I think this goes to show how powerful these variables truly are. Because, 
+while Black people are still a minority group like AAPI people, they still account
+for a majority of the prison population despite lesser total population. 
+
+## Growth of the U.S. Prison Population
+
+```{r}
+
+```
+
+
+
+## Growth of Prison Population by State
+
+```{r}
+
+```
+
+
+
+## TENTATIVE SCATTER PLOT
+
+```{r}
+
+```
+
+
+
+## TENTATIVE MAP GRAPH
+
+```{r}
+
+```
+
+
+
 

@@ -140,6 +140,8 @@ get_year_jail_pop <- function() {
   return(bar_chart_data)   
 }
 
+
+
 # This function ... <todo:  update comment>
 # This plotting function should return the chart. This function: (1) Takes no 
 # parameters; and (2) Should call the data wrangling function.
@@ -175,24 +177,15 @@ chart
 # 1. This data wrangling function should return a data frame that is suitable 
 # for visualization. The parameter states should be a vector of states
 
-#line_chart_data <- data %>% 
-#  arrange(year) %>%
-#  filter(between (year, 1970, 2018)) %>%
-#  select(state, year, total_jail_pop) %>%
-#  drop_na() %>%
-#  group_by(year) %>%
-#  summarize(total_jail_pop = sum(total_jail_pop))
-#View(line_chart_data)  
-
 get_jail_pop_by_states <- function(states) {
   line_chart_data <- data %>%
-    arrange(year) %>%
-    filter(between(year, 1970, 2018)) %>%
-    # filter(state == states) %>%
-    select(state, year, total_jail_pop) %>%
     drop_na() %>%
+    filter(between (year, 1970, 2018) &
+             (state %in% states)) %>%
+    select(state, year, total_jail_pop) %>%
     group_by(year) %>%
     summarize(total_jail_pop = sum(total_jail_pop))
+  return(line_chart_data)
 }
 
 test <- get_jail_pop_by_states(c("WA", "OR", "CA"))
@@ -230,7 +223,55 @@ test
 # See Canvas
 # two different continuous varibable representing a trend in the dataset
 # Scatter plot
-# black men in prison versus total in prison?
+# black men in prison versus men prison population?
+
+scatter_plot_data <- data %>%
+  drop_na() %>%
+  group_by(year) %>%
+  select(year, male_prison_pop, black_prison_pop) %>%
+  summarize(male_prison_pop = sum(male_prison_pop), 
+            black_prison_pop = sum(black_prison_pop)
+            )
+View(scatter_plot_data)
+
+plot <- ggplot(data = scatter_plot_data) +
+  geom_point(
+    mapping = aes(
+      x = male_prison_pop, 
+      y = black_prision_pop
+    )
+  ) + labs(
+    x = "Male Prison Population", 
+    y = "Black Prison Population", 
+    title = "Male Prison Population versus Black Prison Population (2000 - 2013)"
+      )
+
+scatter_plot <- function() {
+  plot <- ggplot(data = scatter_plot_data) +
+    geom_point(
+      mapping = aes(
+        x = male_prison_pop, 
+        y = black_prison_pop 
+        #group = states, 
+        #color = states, 
+      )
+    ) + 
+    labs(
+      x = "Male Prison Population", 
+      y = "Black Prison Population", 
+      title = "Male Prison Population versus Black Prison Population (2000 - 2013)"
+    )
+  return(plot)
+}
+
+
+
+scatter_data_wrangling <- function(data) {
+}
+
+scatter_plot <- function() {
+  
+}
 
 
 
