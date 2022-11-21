@@ -67,16 +67,25 @@ for a majority of the prison population despite lesser total population.
 ```{r}
 
 ```
+Bar Chart Showing the Growth of the U.S. Prison Population from 1970 to 2018.
 
-
+As the chart displays, there seems to be a relatively stagnant prison population
+from the early 1970s to the late 1970s at a population just above 150,000. A linear 
+increase in the population then began in the late 1970s in to the late 2000s. The
+population then settled at about 750,000 people continuing in to 2018. The pattern 
+revealed by the chart is that there was a relatively steady low prison population in
+the 1970s. Possible changes in policy, societal views, etc. created a shift of hundreds
+of thousands of people going into the prison system and then again creating a steady 
+prison population but relatively, extremely high.
 
 ## Growth of Prison Population by State
 
 ```{r}
 
 ```
+Line Chart Showing the Growth of the U.S. Prison Population by States from 1970 to 2018. 
 
-
+As the chart displays, 
 
 ## TENTATIVE SCATTER PLOT
 
