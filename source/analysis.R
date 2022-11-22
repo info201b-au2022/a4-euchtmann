@@ -26,7 +26,6 @@ test_query2 <- function(num=6) {
 
 # data wrangling for race populations in prison
 data <- get_data(num_records = -1)
-# View(data)
 
 prison_data <- data %>%
   drop_na() %>%

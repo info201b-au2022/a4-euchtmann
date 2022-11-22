@@ -10,6 +10,14 @@ source("../source/a4-helpers.R")
 source("../source/analysis.R")
 ```
 
+```{r variable_initialization, echo = FALSE}
+bar_chart <- plot_jail_pop_for_us()
+line_chart <- plot_jail_pop_by_states()
+scatter_plot <- scatter_plot()
+map_plot <- map_plot()
+```
+
+
 ## Abstract 
 [TODO: Include a short abstract (about 50 words)]
 
@@ -38,9 +46,6 @@ inequalities within the U.S. prison system through analysis of the data.
 
 ## Data Summary 
 
-```{r}
-
-```
 Through data wrangling I thought it would be insightful to examine the differences
 between cumulative data across all years and counties with the most recent year of 
 data available. I started with calculating the race with the highest prison population
@@ -53,9 +58,10 @@ highest prison population in the U.S.. I then thought it would be useful to unde
 the racial group with the lowest prison counts. I calculated the race the the lowest 
 prison population across the whole data set and the result is **`r low_prison_count`**. 
 Just as I did with the highest counts, I decided to calculate the race with the current 
-lowest prison count to see if this trend still exists. The result is **`r current_low_prison_count`**. 
-This means that AAPI peoples hold the lowest prison population historically and currently
-as analyzed through this data set. It is important to take into consideration populations
+lowest prison count to see if this trend still exists. The result is **`r current_low_prison_count`**. This means that AAPI peoples hold the lowest prison population historically and currently
+as analyzed through this data set. 
+
+It is important to take into consideration populations
 when looking at these results. AAPI and Black peoples make up a relatively small 
 individual chunk of the U.S. population. This explains why the AAPI results were
 so low. I think this goes to show how powerful these variables truly are. Because, 
@@ -64,8 +70,8 @@ for a majority of the prison population despite lesser total population.
 
 ## Growth of the U.S. Prison Population
 
-```{r}
-
+```{r chart1, echo = FALSE}
+plot(bar_chart)
 ```
 Bar Chart Showing the Growth of the U.S. Prison Population from 1970 to 2018.
 
@@ -80,8 +86,8 @@ prison population but relatively, extremely high.
 
 ## Growth of Prison Population by State
 
-```{r}
-
+```{r chart2, echo = FALSE}
+plot(line_chart)
 ```
 Line Chart Showing the Growth of the U.S. Prison Population by States from 1970 to 2018. 
 
@@ -89,16 +95,16 @@ As the chart displays,
 
 ## TENTATIVE SCATTER PLOT
 
-```{r}
-
+```{r chart3, echo = FALSE}
+plot(scatter_plot)
 ```
-
+Scatter Plot Showing the Difference in Prison Populations fom 
 
 
 ## TENTATIVE MAP GRAPH
 
-```{r}
-
+```{r chart4, echo = FALSE}
+plot(map_plot)
 ```
 
 
