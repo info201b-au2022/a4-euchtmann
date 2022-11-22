@@ -1,5 +1,6 @@
 library(tidyverse)
 library("ggplot2")
+library(usmap)
 
 # The functions might be useful for A4
 source("../source/a4-helpers.R")
@@ -229,7 +230,8 @@ scatter_data_wrangling <- function(data) {
   return(scatter_plot_data)
   }
 
-# This function creates a 
+# This function creates a scatter plot comparing the prison populations of Black and 
+# White people from 2000 to 2013
 scatter_plot <- function() {
   plot <- ggplot(data = scatter_plot_data) +
     geom_point(
@@ -246,70 +248,61 @@ scatter_plot <- function() {
   return(plot)
 }
 
-plot <- scatter_plot()
-plot
-
 #----------------------------------------------------------------------------#
 
 ## Section 6  ---- 
 #----------------------------------------------------------------------------#
-# one coninuous varibale by state
-# Mapping ration of black_prison_pop total to white_prison_pop
-# by current year 
-
+# Racial Minority Prison Population Percentage by State
 
 # This function wrangles data to show the current percentage of racial minorities
 # in the prison population.  
+map_data_wrangling <- function() {
+  map_data <- data %>%
+    drop_na() %>%
+    filter(year == max(year)) %>%
+    group_by(state) %>%
+    summarize(
+      black_prison_pop = sum(black_prison_pop), 
+      white_prison_pop = sum(white_prison_pop),
+      aapi_prison_pop = sum(aapi_prison_pop), 
+      latinx_prison_pop = sum(latinx_prison_pop), 
+      native_prison_pop = sum(native_prison_pop), 
+      minority_prison_pop = black_prison_pop +
+        aapi_prison_pop +
+        latinx_prison_pop +
+        native_prison_pop,
+      total_prison_pop = black_prison_pop +
+        aapi_prison_pop +
+        latinx_prison_pop +
+        native_prison_pop +
+        white_prison_pop,
+      percent = (minority_prison_pop / total_prison_pop) * 100
+    ) %>%
+    select(state, percent)
+return(map_data)
 
-map_data <- data %>%
-  drop_na() %>%
-  filter(year == max(year)) %>%
-  group_by(state) %>%
-  summarize(
-    black_prison_pop = sum(black_prison_pop), 
-    white_prison_pop = sum(white_prison_pop),
-    aapi_prison_pop = sum(aapi_prison_pop), 
-    latinx_prison_pop = sum(latinx_prison_pop), 
-    native_prison_pop = sum(native_prison_pop), 
-    minority_prison_pop = black_prison_pop +
-      aapi_prison_pop +
-      latinx_prison_pop +
-      native_prison_pop,
-    total_prison_pop = black_prison_pop +
-      aapi_prison_pop +
-      latinx_prison_pop +
-      native_prison_pop +
-      white_prison_pop,
-    percent = (minority_prison_pop / total_prison_pop) * 100
-  ) %>%
-  select(state, percent)
-View(map_data)
+}
 
 # This function creates a map that shows the current percentage of racial minorities 
 # in the prison population
-library(usmap)
-
-p <- plot_usmap(
-  regions = c("state"), 
-  data = map_data, 
-  values = "percent", 
-  label = TRUE, 
-  label_color = "black"
-) +
-  scale_fill_continuous(
-    low = "white", 
-    high = "blue", 
-    name = "Percent of People of Color in the Prison Population"
+map_plot <- function() {
+  plot <- plot_usmap(
+    regions = c("state"), 
+    data = map_data, 
+    values = "percent", 
+    label = TRUE, 
+    label_color = "black"
   ) +
-  labs(title = "Black to White Prison Population in Each State")
-p
-
-
-
-
+    scale_fill_continuous(
+      low = "white", 
+      high = "blue", 
+      name = "Percent"
+    ) +
+    labs(title = "Percentage of People of Color in the Prison Population in Each State")
+  return(plot)  
+}
 
 #----------------------------------------------------------------------------#
 
-## Load data frame ---- 
 
 
