@@ -258,7 +258,7 @@ plot
 # by current year 
 
 
-# This function wrangles data to show the current ratio of black to white people 
+# This function wrangles data to show the current percentage of racial minorities
 # in the prison population.  
 
 map_data <- data %>%
@@ -268,26 +268,38 @@ map_data <- data %>%
   summarize(
     black_prison_pop = sum(black_prison_pop), 
     white_prison_pop = sum(white_prison_pop),
-    ratio = black_prison_pop / white_prison_pop
+    aapi_prison_pop = sum(aapi_prison_pop), 
+    latinx_prison_pop = sum(latinx_prison_pop), 
+    native_prison_pop = sum(native_prison_pop), 
+    minority_prison_pop = black_prison_pop +
+      aapi_prison_pop +
+      latinx_prison_pop +
+      native_prison_pop,
+    total_prison_pop = black_prison_pop +
+      aapi_prison_pop +
+      latinx_prison_pop +
+      native_prison_pop +
+      white_prison_pop,
+    percent = (minority_prison_pop / total_prison_pop) * 100
   ) %>%
-  select(state, ratio)
+  select(state, percent)
 View(map_data)
 
-# This function creates a map that shows the current ratio of black to white people
+# This function creates a map that shows the current percentage of racial minorities 
 # in the prison population
 library(usmap)
 
 p <- plot_usmap(
   regions = c("state"), 
   data = map_data, 
-  values = "ratio", 
+  values = "percent", 
   label = TRUE, 
   label_color = "black"
 ) +
   scale_fill_continuous(
     low = "white", 
-    high = "red", 
-    name = "Black to White Ratio"
+    high = "blue", 
+    name = "Percent of People of Color in the Prison Population"
   ) +
   labs(title = "Black to White Prison Population in Each State")
 p
