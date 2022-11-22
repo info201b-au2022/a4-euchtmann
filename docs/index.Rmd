@@ -1,7 +1,7 @@
 ---
 title: "Your A4 Report Title (TODO: Revise title)"
 author: "Ella Uchtmann"
-date: '2022-11-01'
+date: '11-21-2022'
 output: html_document
 ---
 
@@ -22,50 +22,15 @@ map_plot <- map_plot()
 [TODO: Include a short abstract (about 50 words)]
 
 ## Introduction 
-Incarceration in the United States is a huge burden on the shoulders
-of racial minorities upheld by the those in power. There are many issues surrounding 
-the prison system in the United States. Such as, the disproportionate amount
-of black people, specifically black men, incarcerated. In this report, data from 
-the Vera Institute of Justice's Incarceration Trends Data Set, will be examined and 
-analyzed to further explore inequalities within the United
-States prison system. Direct stakeholders that should be considered when researching
-this data set are policy makers and government officials. Racism and injustice in
-the prison system are upheld and reinforced by policies and laws within the U.S.. 
-Change can only truly happen in the hands of well informed people in power through 
-the critical analysis and research of this data. Indirect stakeholder that should 
-be considered with extra care are people of color, specifically black people. The
-decisions made by direct stakeholders based on this data has nearly no daily effect
-on those in power. It will drastically impact the lives of thousands of P.O.C. 
-people in their everyday lives. 
+Incarceration in the United States is a huge burden on the shoulders of racial minorities upheld by the those in power. There are many issues surrounding the prison system in the United States. Such as, the disproportionate amount of black people, specifically black men, incarcerated. In this report, data from the Vera Institute of Justice's Incarceration Trends Data Set, will be examined and analyzed to further explore inequalities within the United States prison system. Direct stakeholders that should be considered when researching this data set are policy makers and government officials. Racism and injustice in the prison system are upheld and reinforced by policies and laws within the U.S.. Change can only truly happen in the hands of well informed people in power through the critical analysis and research of this data. Indirect stakeholder that should be considered with extra care are people of color, specifically black people. The decisions made by direct stakeholders based on this data has nearly no daily effect on those in power. It will drastically impact the lives of thousands of P.O.C. people in their everyday lives. 
 
-This report specifically summarizes key values within the data, such as the racial
-groups with the largest and smallest populations within the prison system historically
-and currently. There are also graphs showing the growth of the prison population
-by state and the entirety of the U.S. from 1970 to 2018. The final two charts represent 
-inequalities within the U.S. prison system through analysis of the data.  
+This report specifically summarizes key values within the data, such as the racial groups with the largest and smallest populations within the prison system historically and currently. There are also graphs showing the growth of the prison population by state and the entirety of the U.S. from 1970 to 2018. The final two charts representinequalities within the U.S. prison system through analysis of the data.  
 
 ## Data Summary 
 
-Through data wrangling I thought it would be insightful to examine the differences
-between cumulative data across all years and counties with the most recent year of 
-data available. I started with calculating the race with the highest prison population
-count across all data. The calculation turned out to be **`r high_prison_count`**. This
-means that the racial group with the highest prison population across all data is
-Black people. I then decided to see if this trend hold true to the most recent year. 
-I calculated the race with the current highest prison population and the result was
-**'r current_high_prison_count`**. This shows that Black people continue to hold the 
-highest prison population in the U.S.. I then thought it would be useful to understand 
-the racial group with the lowest prison counts. I calculated the race the the lowest 
-prison population across the whole data set and the result is **`r low_prison_count`**. 
-Just as I did with the highest counts, I decided to calculate the race with the current 
-lowest prison count to see if this trend still exists. The result is **`r current_low_prison_count`**. This means that AAPI peoples hold the lowest prison population historically and currently
-as analyzed through this data set. 
+Through data wrangling I thought it would be insightful to examine the differences between cumulative data across all years and counties with the most recent year of data available. I started with calculating the race with the highest prison population count across all data. The calculation turned out to be **`r high_prison_count`**. This means that the racial group with the highest prison population across all data is Black people. I then decided to see if this trend hold true to the most recent year. I calculated the race with the current highest prison population and the result was **'r current_high_prison_count`**. This shows that Black people continue to hold the highest prison population in the U.S.. I then thought it would be useful to understand the racial group with the lowest prison counts. I calculated the race the the lowest prison population across the whole data set and the result is **`r low_prison_count`**. Just as I did with the highest counts, I decided to calculate the race with the current lowest prison count to see if this trend still exists. The result is **`r current_low_prison_count`**. This means that AAPI peoples hold the lowest prison population historically and currently as analyzed through this data set. 
 
-It is important to take into consideration populations
-when looking at these results. AAPI and Black peoples make up a relatively small 
-individual chunk of the U.S. population. This explains why the AAPI results were
-so low. I think this goes to show how powerful these variables truly are. Because, 
-while Black people are still a minority group like AAPI people, they still account
+It is important to take into consideration populations when looking at these results. AAPI and Black peoples make up a relatively small individual chunk of the U.S. population. This explains why the AAPI results were so low. I think this goes to show how powerful these variables truly are. Because, while Black people are still a minority group like AAPI people, they still account
 for a majority of the prison population despite lesser total population. 
 
 ## Growth of the U.S. Prison Population
@@ -75,14 +40,7 @@ plot(bar_chart)
 ```
 Bar Chart Showing the Growth of the U.S. Prison Population from 1970 to 2018.
 
-As the chart displays, there seems to be a relatively stagnant prison population
-from the early 1970s to the late 1970s at a population just above 150,000. A linear 
-increase in the population then began in the late 1970s in to the late 2000s. The
-population then settled at about 750,000 people continuing in to 2018. The pattern 
-revealed by the chart is that there was a relatively steady low prison population in
-the 1970s. Possible changes in policy, societal views, etc. created a shift of hundreds
-of thousands of people going into the prison system and then again creating a steady 
-prison population but relatively, extremely high.
+As the chart displays, there seems to be a relatively stagnant prison population from the early 1970s to the late 1970s at a population just above 150,000. A linear increase in the population then began in the late 1970s in to the late 2000s. The population then settled at about 750,000 people continuing in to 2018. The pattern revealed by the chart is that there was a relatively steady low prison population in the 1970s. Possible changes in policy, societal views, etc. created a shift of hundreds of thousands of people going into the prison system and then again creating a steady prison population but relatively, extremely high.
 
 ## Growth of Prison Population by State
 
@@ -91,22 +49,24 @@ plot(line_chart)
 ```
 Line Chart Showing the Growth of the U.S. Prison Population by States from 1970 to 2018. 
 
-As the chart displays, 
+As the chart displays, PICK UP HERE WHEN CHART WORKS
 
-## TENTATIVE SCATTER PLOT
+## Black and White Prison Population Trends
 
 ```{r chart3, echo = FALSE}
 plot(scatter_plot)
 ```
-Scatter Plot Showing the Difference in Prison Populations fom 
+Scatter Plot Showing the Difference in White and Black Prison Populations from 2000 - 2013. 
 
+The question inspiring this data visualization was, "_Are there patters between the black prison population and white prison population. Patterns revealed through the data visualization continue to prove black people are held in prison at far higher capacities compared to other races. I chose to compare black prison population and white prison population because in a societal context this would be insightful to the climate of today. The chart shows the black prison population to be far higher on the y-axis with the white prison population always lower on the y-axis. What is the most interesting is that despite such large differences in population numbers, the line trend seems to stay similar across the years studied. As it appears, when there is a spike in population in black peoples, a spike also occurs in the white population. When there is a decline in the white population, there is a decline in the black population as well. So, while the black prison population is far higher than the white population, they follow a similar trend. 
 
-## TENTATIVE MAP GRAPH
+## Racial Minority Prison Population Percentage by State
 
 ```{r chart4, echo = FALSE}
 plot(map_plot)
 ```
+U.S. Map Showing Most Recent Data of the Percentage of POC Peoples in Prison
 
-
+An underlying question after examining the most oppressed group, black people, was,"_How are all racial minorities affected by the U.S. prison system?_" It would be most insightful to look at percentages in this case. The map represent the percentage of racial minorities within the total prison population. The darker the red color the higher the percentage is for POC in prisons. This data is also taken from the most recent year within the data set. The map shows.... PICK UP HERE
 
 
