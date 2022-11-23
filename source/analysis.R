@@ -172,7 +172,7 @@ plot_jail_pop_by_states <- function(states) {
 return(plot) 
 }
 
-states_vector <- c("WA", "OR", "CA", "CO")
+states_vector <- c("WA", "OR", "CA", "CO", "TX")
 test2 <- plot_jail_pop_by_states(states_vector)
 test2
 
